@@ -253,14 +253,14 @@ ja:
       edit_profile: 'プロフィールを編集'
       team_you_belong_to: '所属しているチーム'
       posted_articles: '投稿した記事一覧'
-      only_owner: '権限はオーナーのみあります'
+      change_success: '権限を移行しました'
     button:
       submit: '投稿'
       edit: '編集'
       delete: '削除'
       create: '作成'
       invite: '招待'
-      change: '権限の移行'
+      change: '権限移行'
     top:
       line1: 'このアプリケーションは、チームごと、議題ごとに別れて'
       line2: '特定のイシュー（議題）をメンバーで見やすく共有するためのアプリケーションです'

@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_team, only: %i[show edit update destroy change_owner]
+  before_action :set_team, only: %i[show edit update destroy change ]
 
   def index
     @teams = Team.all
@@ -56,10 +56,10 @@ class TeamsController < ApplicationController
     @team = current_user.keep_team_id ? Team.find(current_user.keep_team_id) : current_user.teams.first
   end
 
-  def change_owner
-    @team.update(owner_id: :params[:owner_id])
+  def change
+    @team.update(owner_id: params[:owner_id])
     @user = User.find(@team.owner_id)
-    redirect_to @team
+    redirect_to @team, notice: I18n.t('views.messages.change_success')
   end
 
 
