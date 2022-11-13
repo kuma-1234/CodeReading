@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_team, only: %i[show edit update destroy]
+  before_action :set_team, only: %i[show edit update destroy change_owner]
 
   def index
     @teams = Team.all
@@ -15,8 +15,10 @@ class TeamsController < ApplicationController
     @team = Team.new
   end
 
-  def edit;
-    redirect_to @team, notice: 'オーナーのみ編集できます' if current_user != @team.owner
+  def edit
+    if current_user != @team.owner
+      redirect_to @team, notice: I18n.t('views.messages.not_create')
+    end
   end
 
   def create
@@ -39,13 +41,13 @@ class TeamsController < ApplicationController
         render :edit
       end
   end
-
+  
   def destroy
     if @team.user.id == @team.owner || current_user
       @team.destroy
       redirect_to teams_url, notice: I18n.t('views.messages.delete_team')
     else
-      redirect_to @team, notice: 'オーナーのみ削除可能です'
+      redirect_to @team, notice: I18n.t('views.messages.not_create')
     end
   end
 
