@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
     end
     member do
-      post :change
+      post :authority_change
     end
   end
 
