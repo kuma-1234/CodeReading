@@ -255,6 +255,7 @@ ja:
       posted_articles: '投稿した記事一覧'
       change_success: '権限を移行しました'
       destroy_agenda: '議題の削除'
+      no_agenda_destroy: '削除権限がありません。オーナーか作成者のみ削除できます。'
     button:
       submit: '投稿'
       edit: '編集'
