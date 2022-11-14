@@ -254,6 +254,7 @@ ja:
       team_you_belong_to: '所属しているチーム'
       posted_articles: '投稿した記事一覧'
       change_success: '権限を移行しました'
+      destroy_agenda: '議題の削除'
     button:
       submit: '投稿'
       edit: '編集'
@@ -261,6 +262,7 @@ ja:
       create: '作成'
       invite: '招待'
       change: '権限移行'
+      destroy: '削除'
     top:
       line1: 'このアプリケーションは、チームごと、議題ごとに別れて'
       line2: '特定のイシュー（議題）をメンバーで見やすく共有するためのアプリケーションです'
