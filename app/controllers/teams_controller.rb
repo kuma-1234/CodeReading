@@ -43,12 +43,8 @@ class TeamsController < ApplicationController
   end
   
   def destroy
-    if @team.user.id == @team.owner || current_user
       @team.destroy
       redirect_to teams_url, notice: I18n.t('views.messages.delete_team')
-    else
-      redirect_to @team, notice: I18n.t('views.messages.not_create')
-    end
   end
 
   def dashboard
