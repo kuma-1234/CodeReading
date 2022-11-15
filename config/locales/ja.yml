@@ -254,6 +254,8 @@ ja:
       team_you_belong_to: '所属しているチーム'
       posted_articles: '投稿した記事一覧'
       change_success: '権限を移行しました'
+      not_create: '権限がありません'
+      only_owner: 'オーナーのみ他人のアカウントの削除が可能です。'
     button:
       submit: '投稿'
       edit: '編集'
