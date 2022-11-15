@@ -5,7 +5,7 @@ class DestroyAgendaMailer < ApplicationMailer
   #   mail to: @users, subject: "アジェンダ削除のお知らせです。"
   # end
   
-  def destroy_agenda_mail(members)
+  def destroy_agenda_mail(team.members)
     @members = members
     mail to: @members.map(&:email),subject: "アジェンダ削除のお知らせです。"
   end
