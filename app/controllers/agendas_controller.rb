@@ -22,7 +22,6 @@ class AgendasController < ApplicationController
   end
 
   def destroy
-    @agenda = Agenda.find(params[:id])
     # @users = []
     # User.where(keep_team_id: @agenda.team_id).each do |user|
     #   @users.push(user.email)
@@ -31,7 +30,7 @@ class AgendasController < ApplicationController
     if current_user.id == @agenda.team.owner_id || current_user.id == @agenda.user_id
       @agenda.destroy
       # DestroyAgendaMailer.destroy_agenda_mail(@users).deliver
-      DestroyAgendaMailer.destroy_agenda_mail(@agenda.members).deliver
+      DestroyAgendaMailer.destroy_agenda_mail(@agenda.team.members).deliver
       redirect_to dashboard_url, notice: I18n.t('views.messages.destroy_agenda')
     else
       redirect_to dashboard_url, notice: I18n.t('views.messages.no_agenda_destroy')
