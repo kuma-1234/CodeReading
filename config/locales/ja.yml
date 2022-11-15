@@ -256,6 +256,8 @@ ja:
       change_success: '権限を移行しました'
       destroy_agenda: '議題の削除'
       no_agenda_destroy: '削除権限がありません。オーナーか作成者のみ削除できます。'
+      not_create: '権限がありません'
+      only_owner: 'オーナーのみ他人のアカウントの削除が可能です。'
     button:
       submit: '投稿'
       edit: '編集'
